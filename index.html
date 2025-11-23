@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Todo — Simple & Beautiful</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="A simple production-ready todo app with animations, localStorage persistence, and drag & drop." />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <div class="title">
+          <svg class="logo" width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" fill="url(#g)" />
+            <path d="M8 12.5l2 2 6-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#7f7fd5"/><stop offset="1" stop-color="#86a8e7"/></linearGradient></defs>
+          </svg>
+          <div>
+            <h1>Simple Todo</h1>
+            <p class="subtitle">Focus. Finish. Repeat.</p>
+          </div>
+        </div>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+      </header>
+
+      <section class="card">
+        <form id="todo-form" class="todo-form" aria-label="Add todo">
+          <input id="todo-input" type="text" placeholder="What needs to be done? — press Enter to add" autocomplete="off" required />
+          <button class="add-btn" aria-label="Add todo">Add</button>
+        </form>
+
+        <div class="controls">
+          <div class="filters" role="tablist" aria-label="Filter todos">
+            <button class="filter-btn active" data-filter="all" role="tab">All</button>
+            <button class="filter-btn" data-filter="active" role="tab">Active</button>
+            <button class="filter-btn" data-filter="completed" role="tab">Completed</button>
+          </div>
+          <button id="clear-completed" class="ghost">Clear completed</button>
+        </div>
+
+        <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+
+        <footer class="card-footer">
+          <span id="items-left">0 items left</span>
+          <small class="hint">Drag to reorder • Double-click to edit</small>
+        </footer>
+      </section>
+
+      <footer class="app-footer">
+        <span>Built with ❤️ — Local-only, no backend</span>
+      </footer>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
